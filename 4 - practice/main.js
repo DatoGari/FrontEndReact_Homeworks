@@ -2,40 +2,41 @@
 // ჩაანაცვლებს "valueToReplace"-ს "valueToReplaceWith" მნიშვნელობით და დააბრუნებს ახალ stringს
 // არ გამოიყენო string.replace() ფუნქცია
 
-// function insertText(string, valueToReplace, valueToReplaceWith) {
+function insertText(string, valueToReplace, valueToReplaceWith) {
     
-//     let replaceStart = string.indexOf(valueToReplace)
-//     let replaceEnd = replaceStart + valueToReplace.length
+    let replaceStart = string.indexOf(valueToReplace)
+    let replaceEnd = replaceStart + valueToReplace.length
 
-//     let beginText = string.substring(0, replaceStart)
-//     let endText = string.substring(replaceEnd,string.length)
-//     let newText = beginText + valueToReplaceWith + endText
+    let beginText = string.substring(0, replaceStart)
+    let endText = string.substring(replaceEnd,string.length)
+    let newText = beginText + valueToReplaceWith + endText
     
-//     return newText
-// }
+    return newText
+}
 
-// console.log(insertText("Once upon a time in America", "time", "crime"))
+console.log(insertText("Once upon a time in America", "time", "crime"))
 
 // დაწერე ფუნქცია, რომელიც პარამეტრად მიიღებს string ტიპის მნიშვნელობას (წინადადებას),
 // მასში ყოველ სიტყვას გადაწერს დიდი ასოთი და დააბრუნებს ახალ წინადადებას
 
-// function capitalizeWords (text) {
-//     let textArrey = text.split(" ")
-//     let startLetter = ""
-//     let wordCaps = ""
-//     let newText = ""
+function capitalizeWords (text) {
 
-//     for (word of textArrey) {
-//         startLetter = word.charAt(0).toUpperCase()
-//         wordCaps = startLetter + word.slice(1, word.length)
-//         newText = newText + wordCaps + " "
-//     }
+    let textArrey = text.split(" ")
+    let startLetter = ""
+    let wordCaps = ""
+    let newText = ""
 
-//     return newText
+    for (word of textArrey) {
+        startLetter = word.charAt(0).toUpperCase()
+        wordCaps = startLetter + word.slice(1, word.length)
+        newText = newText + wordCaps + " "
+    }
 
-// }
+    return newText
 
-// console.log(capitalizeWords("once upon a time in america"))
+}
+
+console.log(capitalizeWords("once upon a time in america"))
 
 // დაწერე ფუნქცია, რომელიც პარამეტრად მიიღებს მომხმარებლების მასივს და დააბრუნებს დალაგებულ 
 // მასივს მომხმარებლების ასაკის ზრდადობის მიხედვით
