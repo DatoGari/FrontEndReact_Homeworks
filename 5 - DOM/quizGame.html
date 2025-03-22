@@ -1,0 +1,35 @@
+<!-- შექმენი quiz თამაში. დაწერე რამდენიმე მოკლე შეკითხვა თავისი სავარაუდო პასუხებით. -->
+<!-- სწორ პასუხზე დაჭერის შემთხვევაში გაამწვანე პასუხი, არასწორი პასუხის შემთხვევაში გააწითლე. -->
+<!-- ბონუს დავალება: გამოიტანე ეკრანზე ქულების რაოდენობა, სწორი პასუხის შემთხვევაში დაამატე 1 ქულა -->
+<!-- არასწორის შემთხვევაში უცვლელი რჩება -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="./quizGame.css">
+</head>
+
+<body>
+
+<h1>Multiple Choice Quiz</h1>
+<br>
+
+<h2 id="question"><h2>
+<br>
+<button id="answer1" onclick="changeColor(id)"></button>
+<button id="answer2" onclick="changeColor(id)"></button>
+<button id="answer3" onclick="changeColor(id)"></button>
+<button id="answer4" onclick="changeColor(id)"></button>
+<br>
+
+<button id="previous" onclick="changeQuestion(0)">Previous Question</button>
+<button id="next" onclick="changeQuestion(1)">Next Question</button>
+
+
+<script src = "./quizGame.js"></script>
+
+</body>
+</html>
