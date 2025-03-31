@@ -1,15 +1,5 @@
 // fetch ფუნქციის გამოყენებით წამოიღე მონაცემები მოცემული მისამართიდან და გამოიტანე DOM-ში პოსტის სახით
 
-// fetch("https://jsonplaceholder.typicode.com/posts")
-//     .then(res => res.json())
-//     .then(data => print(data))
-
-// function print (data) {
-//     for (user of data) {
-//         console.log(user)
-//     }
-// }
-
 async function fetchPosts() {
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/posts');
