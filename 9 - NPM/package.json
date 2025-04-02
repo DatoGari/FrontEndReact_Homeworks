@@ -1,0 +1,22 @@
+{
+  "name": "npm_project_1",
+  "version": "1.0.0",
+  "description": "This is my first project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DatoGari/FrontEndReact_Homeworks.git"
+  },
+  "author": "Dato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DatoGari/FrontEndReact_Homeworks/issues"
+  },
+  "homepage": "https://github.com/DatoGari/FrontEndReact_Homeworks#readme",
+  "dependencies": {
+    "validator": "^13.15.0"
+  }
+}
