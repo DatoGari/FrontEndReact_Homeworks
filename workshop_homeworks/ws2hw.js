@@ -87,4 +87,82 @@
 
 // 10. Use .find() to get the first number greater than 10.
 
+// const numArrey = [1, 3, 6, 12, 5, 7, 34, 22, 7, 0]
+
+// const moreThanTen = numArrey.find((value) => value > 10)
+
+// console.log(moreThanTen)
+
+// 11. Sort an array of numbers in ascending order using .sort().
+
+// const numArrey = [1, 3, 6, 12, 5, 7, 34, 22, 7, 0]
+
+// numArrey.sort((a, b) => a - b)
+
+// console.log(numArrey)
+
+// 12. Destructure an array and print the first two elements.
+
+// const myFamily = ['Nino', 'Dato', 'Levan', 'Ilia', 'Elene']
+
+// const [a, b, ...rest] = myFamily
+
+// console.log(a, b)
+
+// 13. Destructure an object to extract name and age.
+
+// const user = {name: 'Nino', age: 49}
+
+// const {name, age} = user
+
+// console.log(name, age)
+
+// 14. Use the rest operator to collect remaining elements from an array.
+
+// const myFamily = ['Nino', 'Dato', 'Levan', 'Ilia', 'Elene']
+
+// const [a, b, ...rest] = myFamily
+
+// for (member of rest) {
+//     console.log(member)
+// }
+
+//15. Nested object destructuring to extract city.
+
+// const userProfile = {
+//     firstName: 'Elene',
+//     lastName: 'Gharibashvili',
+//     id: 1234,
+//     age: 15,
+//     address: {
+//         street: '19 Kutateladze',
+//         city: 'Tbilisi'
+//     }
+// }
+
+// const { firstName, lastName, id, age, address: {street, city} } = userProfile
+
+// console.log(city)
+
+// 16. Use spread to merge two arrays
+
+// const arr1 = [1, 2, 3]
+// const arr2 = [4, 5, 6]
+
+// const arrMrg = [...arr1, ...arr2]
+
+// console.log(arrMrg)
+
+// 17. Use spread to clone an object.
+
+const userProfile = {
+    firstName: 'Elene',
+    lastName: 'Gharibashvili',
+    id: 1234,
+    age: 15,
+    address: {
+        street: '19 Kutateladze',
+        city: 'Tbilisi'
+    }
+}
 
