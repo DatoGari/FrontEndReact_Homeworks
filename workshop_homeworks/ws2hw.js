@@ -155,14 +155,92 @@
 
 // 17. Use spread to clone an object.
 
-const userProfile = {
-    firstName: 'Elene',
-    lastName: 'Gharibashvili',
-    id: 1234,
-    age: 15,
-    address: {
-        street: '19 Kutateladze',
-        city: 'Tbilisi'
+// const userProfile = {
+//     firstName: 'Elene',
+//     lastName: 'Gharibashvili',
+//     id: 1234,
+//     age: 15,
+//     address: {
+//         street: '19 Kutateladze',
+//         city: 'Tbilisi'
+//     }
+// }
+
+// const newUserProfile = { ...userProfile, address: {...userProfile.address}}
+
+// console.log(newUserProfile)
+
+// 18. Create an array of 5 random numbers and find their average.
+
+// const randomArray = []
+
+// for (i=0; i<5; i++) {
+//     randomArray.push(Math.round(Math.random()*100))
+// }
+
+// const average = randomArray.reduce(() => {
+//     let sum = 0
+//     let avg = 0
+//     for (n of randomArray) {
+//         sum += n 
+//     }
+//     avg = sum / randomArray.length
+//     return avg
+// })
+
+// console.log(randomArray)
+// console.log(average)
+
+// 19. Write a function to find the second largest number in an array.
+// const numbers = [10, 45, 78, 99, 34, 67]
+
+
+// function find2ndLargest(array) {
+//     array.sort((a, b) => b - a)
+//     return array[1]
+// }
+
+// const numbers = [10, 45, 78, 99, 34, 67]
+
+// console.log(find2ndLargest(numbers))
+
+// 20. Remove duplicate elements from an array.
+// const numbers = [1, 2, 3, 2, 4, 5, 1, 6]
+
+
+// const numbers = [1, 2, 3, 2, 4, 5, 1, 6]
+
+// numbers.sort((a, b) => a - b)
+
+// const newNumbers = []
+
+// for (i=0; i<numbers.length; i++) {
+//     if (numbers[i] !== numbers[i+1]) {
+//         newNumbers.push(numbers[i])
+//     }
+// }
+
+// console.log(newNumbers)
+
+// Find the most frequent element in an array. 
+// const colors = ["red", "blue", "red", "green", "blue", "blue"]
+
+const colors = ["red", "blue", "red", "green", "blue", "blue"]
+
+let getColor = ""
+let colorCounter = 0
+let colorMax = ""
+let colorMaxCount = 0
+
+for (i=0; i<colors.length; i++) {
+    getColor = colors[i] 
+    const colorFilter = colors.filter((color) => color == getColor)
+    const colorCounter = colorFilter.length
+    if (colorMaxCount < colorCounter) {
+        colorMax = getColor
+        colorMaxCount = colorCounter
     }
 }
+
+console.log(colorMax, colorMaxCount)
 
