@@ -222,25 +222,120 @@
 
 // console.log(newNumbers)
 
-// Find the most frequent element in an array. 
+// 21. Find the most frequent element in an array. 
+
 // const colors = ["red", "blue", "red", "green", "blue", "blue"]
 
-const colors = ["red", "blue", "red", "green", "blue", "blue"]
+// let getColor = ""
+// let colorCounter = 0
+// let colorMax = ""
+// let colorMaxCount = 0
 
-let getColor = ""
-let colorCounter = 0
-let colorMax = ""
-let colorMaxCount = 0
+// for (i=0; i<colors.length; i++) {
+//     getColor = colors[i] 
+//     const colorFilter = colors.filter((color) => color == getColor)
+//     const colorCounter = colorFilter.length
+//     if (colorMaxCount < colorCounter) {
+//         colorMax = getColor
+//         colorMaxCount = colorCounter
+//     }
+// }
 
-for (i=0; i<colors.length; i++) {
-    getColor = colors[i] 
-    const colorFilter = colors.filter((color) => color == getColor)
-    const colorCounter = colorFilter.length
-    if (colorMaxCount < colorCounter) {
-        colorMax = getColor
-        colorMaxCount = colorCounter
+// console.log(colorMax, colorMaxCount)
+
+// 22. Write a function that takes an object and returns a new object 
+// with all values converted to uppercase.
+
+// const someObject = {
+//     productName: 'Apple Pie',
+//     category: 'Baked Goods',
+//     weightGrams: 100, 
+//     ingredients: [
+//         {id: 1, ingredient: 'apple', percent: 30},
+//         {id: 2, ingredient: 'wheat', percent: 50},
+//         {id: 3, ingredient: 'sugar', percent: 10},
+//         {id: 4, ingredient: 'sunflower oil', percent: 5},
+//         {id: 5, ingredient: 'baking soda', percent: 5},
+//     ],
+//     salePriceEUR: 5,
+//     bestBefore: '31.05.2025'
+// }
+
+// function deepUppercase(input) {
+//   if (typeof input === 'string') {
+//     return input.toUpperCase();
+//   } else if (Array.isArray(input)) {
+//     return input.map(deepUppercase);
+//   } else if (input !== null && typeof input === 'object') {
+//     return Object.fromEntries(
+//       Object.entries(input).map(([key, value]) => [key, deepUppercase(value)])
+//     );
+//   } else {
+//     return input; // return unchanged (number, boolean, null, etc.)
+//   }
+// }
+
+// console.log(deepUppercase(someObject))
+
+// 23. Create a function that checks if two objects have the same properties
+//  and values.
+
+const prod1 = {
+    productName: 'Apple Pie',
+    category: 'Baked Goods',
+    weightGrams: 100,
+    salePriceEUR: 5,
+    bestBefore: '31.05.2025',
+    ingredients: ['apple', 'wheat', 'sugar', 'oil'],
+    producer: {
+        company: 'Yammie',
+        country: 'USA'
     }
 }
 
-console.log(colorMax, colorMaxCount)
+const prod2 = {
+    productName: 'Apple Pie',
+    category: 'Baked Goods',
+    ingredients: ['apple', 'wheat', 'sugar', 'oil'],
+    weightGrams: 100,
+    salePriceEUR: 5,
+    bestBefore: '31.05.2025',
+    producer: {
+        company: 'Yammie',
+        country: 'USA'
+    }
+}
 
+function deepEqual(a, b) {
+  if (a === b) return true;
+
+  // Check for null or different types
+  if (typeof a !== typeof b || a === null || b === null) return false;
+
+  // Arrays
+  if (Array.isArray(a) && Array.isArray(b)) {
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) {
+      if (!deepEqual(a[i], b[i])) return false;
+    }
+    return true;
+  }
+
+  // Objects
+  if (typeof a === 'object' && typeof b === 'object') {
+    const keysA = Object.keys(a);
+    const keysB = Object.keys(b);
+    if (keysA.length !== keysB.length) return false;
+
+    for (let key of keysA) {
+      if (!keysB.includes(key) || !deepEqual(a[key], b[key])) return false;
+    }
+
+    return true;
+  }
+
+  // Everything else (numbers, strings, booleans)
+  return false;
+}
+
+console.log(deepEqual(prod1, prod2))
