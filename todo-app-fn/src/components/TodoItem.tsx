@@ -1,6 +1,17 @@
 import React from 'react'
 
-function TodoItem({ todo, onDone, onDelete, onUndo }) {
+interface comProps {
+  todo: {
+    id: string;
+    text: string;
+    done: boolean;
+  };
+  onDone: (id: string) => void;
+  onDelete: (id: string) => void;
+  onUndo: (id: string) => void;
+}
+
+function TodoItem({ todo, onDone, onDelete, onUndo }: comProps) {
   return (
     <li>
       {todo.done ? <s>{todo.text}</s> : todo.text}

@@ -4,10 +4,28 @@ import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 
 function App() {
-  const [task, setTask] = useState('')
-  const [todos, setTodos] = useState([])
 
-  const inputRef = useRef(null)
+// interface AppProps {
+//   inputRef: React.RefObject<HTMLInputElement>;
+//   task: string;
+//   setTask: (value: string) => void;
+//   handleAdd: () => void;
+// }
+
+  type todoType = {
+    id: string;
+    text: string;
+    done: boolean
+  }
+
+interface myFuncProps {
+  todos: todoType[];
+}
+
+  const [task, setTask] = useState('');
+  const [todos, setTodos] = useState<todoType[]>([]);
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (inputRef.current) {
@@ -17,8 +35,10 @@ function App() {
   }, [])
 
   const handleAdd = useCallback(()=> {
+
     if (task.trim() !== '') {
-      const newTodo = {
+      
+      const newTodo: todoType = {
         id: crypto.randomUUID(),
         text: task,
         done: false,
@@ -28,17 +48,17 @@ function App() {
     }
   }, [task]) 
 
-  const handleDelete = useCallback ((id) => {
+  const handleDelete = useCallback ((id:string) => {
     setTodos((prev) => prev.filter(todo => todo.id !== id))
   }, [])
 
-  const markAsDone = useCallback((id) => {
+  const markAsDone = useCallback((id:string) => {
     setTodos((prev) =>
       prev.map(todo => todo.id === id ? { ...todo, done: true } : todo)
     )
   }, [])
 
-  const markAsActive = useCallback((id) => {
+  const markAsActive = useCallback((id:string) => {
     setTodos((prev) =>
       prev.map(todo => todo.id === id ? { ...todo, done: false } : todo)
     )

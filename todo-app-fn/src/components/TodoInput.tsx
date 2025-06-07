@@ -1,6 +1,15 @@
 import React from "react"
 
-function TodoInput({ inputRef, task, setTask, handleAdd }) {
+interface AppProps {
+    inputRef: React.RefObject<HTMLInputElement>;
+    task: string;
+    setTask: (value: string) => void;
+    handleAdd: () => void;
+    }
+
+    
+
+function TodoInput({ inputRef, task, setTask, handleAdd }: AppProps) {
     return (
         <div>
             <input 

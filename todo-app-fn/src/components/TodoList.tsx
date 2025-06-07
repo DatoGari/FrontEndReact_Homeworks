@@ -1,7 +1,15 @@
 import React from 'react'
 import TodoItem from './TodoItem'
 
-function TodoList({ title, todos, onDone, onDelete, onUndo }) {
+type myFuncProps = {
+  title: string;
+  todos: [{id: string, text: string, done: boolean}];
+  onDone: (id: string) => void;
+  onDelete: (id: string) => void;
+  onUndo: (id: string) => void;
+}
+
+function TodoList({ title, todos, onDone, onDelete, onUndo }: myFuncProps) {
   return (
     <div className="task-column">
       <h2>{title}</h2>
